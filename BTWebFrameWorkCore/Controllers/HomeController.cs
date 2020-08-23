@@ -72,7 +72,8 @@ namespace BTWebAppFrameWorkCore.Controllers
 
         public IActionResult OurServices()
         {
-            return View();
+            
+            return View(_BaseViewModel);
         }
 
         public IActionResult OurProducts()
