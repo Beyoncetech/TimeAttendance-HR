@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AppDAL.DBModels
+namespace AppModel
 {
     public class LoginUser
     {

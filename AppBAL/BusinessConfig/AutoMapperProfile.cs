@@ -1,4 +1,5 @@
 ﻿using AppDAL.DBModels;
+using AppModel;
 using AutoMapper;
 using System;
 using System.Collections.Generic;

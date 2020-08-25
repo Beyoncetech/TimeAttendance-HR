@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AppBAL.Sevices.Login;
-using AppDAL.DBModels;
+using AppModel;
 using AppUtility.AppModels;
 using BTWebAppFrameWorkCore.Models;
 using Microsoft.AspNetCore.Authentication;

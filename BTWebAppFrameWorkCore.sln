@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTWebAppFrameWorkCore", "BT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppUtility", "AppUtility\AppUtility.csproj", "{4E7A961C-9964-4FE8-89A6-B93C034039E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDAL", "AppDAL\AppDAL.csproj", "{988C6CD4-B5AB-42D8-A185-690FF7E0312E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppDAL", "AppDAL\AppDAL.csproj", "{988C6CD4-B5AB-42D8-A185-690FF7E0312E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBAL", "AppBAL\AppBAL.csproj", "{EBA9C083-0D7A-488F-97A6-A7B6A495B795}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppBAL", "AppBAL\AppBAL.csproj", "{EBA9C083-0D7A-488F-97A6-A7B6A495B795}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppModel", "AppModel\AppModel.csproj", "{F9C4E0E5-A4B6-4124-8817-EFB9B48FC9CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppModel", "AppModel\AppModel.csproj", "{F9C4E0E5-A4B6-4124-8817-EFB9B48FC9CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDatabase", "AppDatabase\AppDatabase.csproj", "{AEB14CDC-5DA3-4AF4-905B-D93505E97FAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F9C4E0E5-A4B6-4124-8817-EFB9B48FC9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9C4E0E5-A4B6-4124-8817-EFB9B48FC9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9C4E0E5-A4B6-4124-8817-EFB9B48FC9CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEB14CDC-5DA3-4AF4-905B-D93505E97FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEB14CDC-5DA3-4AF4-905B-D93505E97FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEB14CDC-5DA3-4AF4-905B-D93505E97FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEB14CDC-5DA3-4AF4-905B-D93505E97FAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
