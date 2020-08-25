@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AppBAL.Sevices.Login;
+using AppDAL.DBModels;
 using AppUtility.AppModels;
 using BTWebAppFrameWorkCore.Models;
 using Microsoft.AspNetCore.Authentication;
@@ -37,9 +38,11 @@ namespace BTWebAppFrameWorkCore.Controllers
                 var result = await _LoginService.ValidateUser(model.UserName, model.Password);
                 if(result.Stat)
                 {
+                    LoginUser UserInfo = (LoginUser) result.StatusObj;
                     var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
                     identity.AddClaim(new Claim("UserID", model.UserName));
-                    identity.AddClaim(new Claim("UserName", model.UserName));                    
+                    identity.AddClaim(new Claim("UserType", UserInfo.UserType));
+                    identity.AddClaim(new Claim("UserPerm", string.IsNullOrEmpty(UserInfo.UserPerm)? "": UserInfo.UserPerm));
                     //foreach (var role in user.Roles)
                     //{
                     //    identity.AddClaim(new Claim(ClaimTypes.Role, role.Role));

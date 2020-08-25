@@ -14,16 +14,16 @@ namespace AppDAL.DBRepository
     }
     public class AppUserRepository : IAppUserRepository
     {
-        private readonly AppDBContext _DBContext;
+        private readonly AppDBContext _DBContext;        
         public AppUserRepository(AppDBContext DBContext)
         {
-            _DBContext = DBContext;
+            _DBContext = DBContext;            
         }
         public async Task<Appuser> GetUserByUserID(string UserID)
         {
             var oUser = await _DBContext.Appuser.Where(x => x.UserName.Equals(UserID)).FirstOrDefaultAsync();
 
-            return oUser;
+            return oUser;            
         }
     }
 }

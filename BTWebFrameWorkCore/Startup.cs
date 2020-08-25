@@ -7,6 +7,7 @@ using AppBAL.Sevices.Login;
 using AppDAL.DBModels;
 using AppDAL.DBRepository;
 using AppUtility.AppModels;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -57,6 +58,8 @@ namespace BTWebAppFrameWorkCore
                     });
 
             services.AddControllersWithViews();
+            // register the automapper
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             //services.AddMvc()
             //.AddJsonOptions(options =>
