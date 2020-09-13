@@ -4,13 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 namespace AppDAL.DBRepository
 {
     public interface ICommonRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();        
-        void Insert(T entity);
+        IEnumerable<T> GetAll();
+        Task<bool>Insert(T entity);
         void Update(T entity);
         void Delete(T entity);
     }
@@ -29,12 +29,15 @@ namespace AppDAL.DBRepository
         {
             return entities.AsEnumerable();
         }        
-        public void Insert(T entity)
+        public async Task<bool> Insert(T entity)
         {
             if (entity == null) throw new ArgumentNullException("entity");
-
             entities.Add(entity);
-            _DBContext.SaveChanges();
+            var returnChanges= await _DBContext.SaveChangesAsync();
+            if (returnChanges > 0)
+                return true;
+            else
+                return false;
         }
         public void Update(T entity)
         {

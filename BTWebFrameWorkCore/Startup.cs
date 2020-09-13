@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using AppBAL.Sevices.Authentication;
 using AppBAL.Sevices.Login;
+using AppBAL.Sevices.Master;
 using AppDAL.DBModels;
 using AppDAL.DBRepository;
+using AppDAL.DBRepository.Master;
 using AppUtility.AppModels;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -104,9 +106,18 @@ namespace BTWebAppFrameWorkCore
             services.AddScoped<IEmailSender, EmailSender>();
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<ISiteMapService, SiteMapService>();
+            #region Master
+            services.AddScoped<IShiftService, ShiftService>();
+            #endregion
             //*****register DB repository*********
             services.AddScoped(typeof(ICommonRepository<>), typeof(CommonRepository<>));
             services.AddScoped<IAppUserRepository, AppUserRepository>();
+            #region Master
+            services.AddScoped<IShiftRepository, ShiftRepository>();
+            services.AddScoped<IDesignationRepository, DesignationRepository>();
+            services.AddScoped<IDeviceRepository, DeviceRepository>();
+
+            #endregion
             //************************************
         }
 
