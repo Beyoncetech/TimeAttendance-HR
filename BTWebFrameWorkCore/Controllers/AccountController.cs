@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AppBAL.Sevices.Login;
+using AppBAL.Sevices.Master;
 using AppModel;
 using AppUtility.AppModels;
 using BTWebAppFrameWorkCore.Models;
@@ -17,11 +18,13 @@ namespace BTWebAppFrameWorkCore.Controllers
     {
         private readonly IEmailSender _EmailSender;
         private readonly ILoginService _LoginService;
+        private readonly IShiftService _ShiftService;
 
-        public AccountController(ILoginService LoginService, IEmailSender EmailSender)
+        public AccountController(ILoginService LoginService, IEmailSender EmailSender,IShiftService ShiftService)
         {
             _LoginService = LoginService;
             _EmailSender = EmailSender;
+            _ShiftService = ShiftService;
         }
         #region App login
         public IActionResult Login()
